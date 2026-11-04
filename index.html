@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task Manager · Ominakavsar Abduganieva</title>
+  <meta name="description" content="Task Manager built with plain JavaScript and Supabase REST API — Vistula Team Project.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="masthead__top">
+      <span class="tag">Vistula · Team Project IT</span>
+      <span class="tag tag--live"><i class="dot"></i> Live · Supabase REST</span>
+    </div>
+    <h1>Task <em>Manager</em></h1>
+    <p class="masthead__sub">
+      A quiet, precise ledger for the things that matter.
+      Built by <strong>Ominakavsar Abduganieva</strong> ·
+      Student ID <span id="student-id" class="mono-chip">74026</span>
+    </p>
+  </header>
+
+  <main class="layout">
+    <!-- Composer -->
+    <section class="composer" aria-labelledby="composer-title">
+      <div class="composer__head">
+        <span class="eyebrow">01 — Compose</span>
+        <h2 id="composer-title">New entry</h2>
+      </div>
+
+      <form id="task-form" autocomplete="off">
+        <label class="field">
+          <span>Title <b>*</b></span>
+          <input type="text" id="task-title" placeholder="e.g. Merge partner's pull request" required maxlength="120">
+        </label>
+        <label class="field">
+          <span>Description</span>
+          <textarea id="task-description" rows="4" placeholder="A few words of context (optional)"></textarea>
+        </label>
+        <div class="actions">
+          <button type="submit" id="task-submit" class="btn btn--primary">Add task</button>
+          <button type="button" id="task-cancel" class="btn btn--ghost" hidden>Cancel edit</button>
+        </div>
+      </form>
+
+      <div id="status-message" class="status" role="status" aria-live="polite"></div>
+
+      <div class="composer__foot">
+        <a id="contribution-link" href="contribution.html" class="link-arrow">Team contribution page <span>→</span></a>
+      </div>
+    </section>
+
+    <!-- Ledger -->
+    <section class="ledger" aria-labelledby="ledger-title">
+      <div class="ledger__head">
+        <div>
+          <span class="eyebrow">02 — Ledger</span>
+          <h2 id="ledger-title">All tasks</h2>
+        </div>
+
+        <div class="progress" aria-label="Completion progress">
+          <svg viewBox="0 0 44 44" width="56" height="56" aria-hidden="true">
+            <circle class="progress__bg" cx="22" cy="22" r="18"/>
+            <circle id="progress-ring" class="progress__fg" cx="22" cy="22" r="18"/>
+          </svg>
+          <div>
+            <strong id="progress-pct">0%</strong>
+            <small id="progress-count">0 of 0 done</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="filters" role="tablist" aria-label="Filter tasks">
+        <button class="chip is-active" data-filter="all" role="tab">All</button>
+        <button class="chip" data-filter="active" role="tab">Active</button>
+        <button class="chip" data-filter="done" role="tab">Completed</button>
+      </div>
+
+      <div id="task-list" aria-live="polite"></div>
+      <p id="empty-state" class="empty" hidden>Nothing here yet — your first entry starts the ledger.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="mono">© 2026 Ominakavsar Abduganieva · 74026</span>
+    <span class="mono">HTML · CSS · JS · GitHub Pages · Supabase</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
