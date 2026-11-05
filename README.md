@@ -10,8 +10,8 @@
 - Contribution JSON: https://okavsar9-boop.github.io/vistula-task-manager/contribution.json
 
 ## Pull Requests
-- PR I created in my partner's repository (merged): _paste link_
-- PR I received and merged in this repository: _paste link_
+- PR I created in my partner's repository (merged): https://github.com/vistula-team-project-64613/vistula-task-manager/pull/1
+- PR I received and merged in this repository: https://github.com/okavsar9-boop/vistula-task-manager/pull/1
 
 ## Stack
 HTML, CSS, vanilla JavaScript · Supabase (PostgreSQL + auto-generated REST API) · GitHub Pages
